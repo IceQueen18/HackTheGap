@@ -11,44 +11,84 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="donation.html">Volunteer Opportunities</a>
+        <a href="donation.html">Donation Opportunities</a>
         <a href="search.html">Search for Donations</a>
-        <a href="form.html"> Contribute Donation Ideas</a>
     </nav>
 
-    <h1>Search for Donations</h1>
-    
-    <!-- Search Bar -->
-    <input type="text" id="search-bar" placeholder="Search for donations..." onkeyup="filterDonations()">
-    
-    <!-- No results message -->
-    <p id="no-results" style="display: none;">No donations found matching your search.</p>
+    <!-- Search Bar Section -->
+     <h1>Donations</h1>
+    <section>
+        <h1>Search for Donations</h1>
+        <input type="text" id="search-bar" placeholder="Search for donations..." onkeyup="filterDonations()">
+        <p id="no-results" style="display: none;">No donations found matching your search.</p>
+    </section>
 
-    <!-- Donation Items -->
-    <div id="donations">
-        <div class="donation-item" data-name="Clothes for Homeless">
-            <h3>Clothes for Homeless</h3>
-            <p>Donate clothes to homeless shelters in need.</p>
-        </div>
-        <div class="donation-item" data-name="Food for Refugees">
-            <h3>Food for Refugees</h3>
-            <p>Help provide food for refugees in camps.</p>
-        </div>
-        <div class="donation-item" data-name="Books for Schools">
-            <h3>Books for Schools</h3>
-            <p>Donate books for underfunded schools.</p>
-        </div>
-        <div class="donation-item" data-name="Medical Supplies for Hospitals">
-            <h3>Medical Supplies for Hospitals</h3>
-            <p>Donate medical supplies to local hospitals.</p>
-        </div>
+    <!-- Donation Categories -->
+    <div class="donation-item" data-name="Environment">
+        <h4>Environment</h4>
+        <ul>
+            <li><a href="https://usa.oceana.org" data-item="Oceana USA">Oceana USA</a></li>
+            <li><a href="https://www.nature.org/en-us/" data-item="The Nature Conservancy">The Nature Conservancy</a></li>
+            <li><a href="https://ecoangola.com/" data-item="EcoAngola">EcoAngola</a></li>
+            <li><a href="https://www.otchiva.ao" data-item="Otchiva">Otchiva</a></li>
+            <li><a href="https://www.asanacr.org" data-item="Asana">Asana</a></li>
+            <li><a href="https://www.alturaswildlifesanctuary.org/about-us/" data-item="Alturas Wildlife Sanctuary">Alturas Wildlife Sanctuary</a></li>
+        </ul>
+    </div>
+
+    <div class="donation-item" data-name="Health">
+        <h4>Health</h4>
+        <ul>
+            <li><a href="https://www.punboon.org/foundation/00939" data-item="Punboon">Punboon</a></li>
+            <li><a href="https://www.cancer.org.au" data-item="Cancer Council">Cancer Council</a></li>
+            <li><a href="https://www.beyondblue.org.au" data-item="Beyond Blue">Beyond Blue</a></li>
+        </ul>
+    </div>
+
+    <div class="donation-item" data-name="Education">
+        <h4>Education</h4>
+        <ul>
+            <li><a href="https://malala.org/" data-item="Malala Fund">Malala Fund</a></li>
+            <li><a href="https://www.educategirls.ngo/" data-item="Educate Girls">Educate Girls</a></li>
+            <li><a href="https://maramatanga.co.nz/projects" data-item="NPM">NPM</a></li>
+            <li><a href="https://www.uwc.org/donate" data-item="UWC">UWC</a></li>
+        </ul>
+    </div>
+
+    <div class="donation-item" data-name="Poverty">
+        <h4>Poverty</h4>
+        <ul>
+            <li><a href="https://www.neunerhaus.at/spenden/" data-item="Neunerhaus">Neunerhaus</a></li>
+        </ul>
+    </div>
+
+    <div class="donation-item" data-name="Gender">
+        <h4>Gender</h4>
+        <ul>
+            <li><a href="https://www.thetrevorproject.org" data-item="The Trevor Project">The Trevor Project</a></li>
+            <li><a href="https://support.womenforwomen.org" data-item="Women for Women">Women for Women</a></li>
+            <li><a href="https://www.ondjangofeminista.com/" data-item="Ondjango Feminista">Ondjango Feminista</a></li>
+            <li><a href="https://lab.thinkolga.com/" data-item="Think Olga">Think Olga</a></li>
+            <li><a href="https://www.girlsnotbrides.org/about-us/" data-item="Girls Not Brides">Girls Not Brides</a></li>
+        </ul>
+    </div>
+
+    <div class="donation-item" data-name="Conflict/War">
+        <h4>Conflict/War</h4>
+        <ul>
+            <li><a href="https://www.refugeesupporteu.com/donate/" data-item="Refugee Support">Refugee Support</a></li>
+            <li><a href="https://www.cinseattle.org" data-item="Cinseattle">Cinseattle</a></li>
+            <li><a href="https://www.razomforukraine.org/" data-item="Razom for Ukraine">Razom for Ukraine</a></li>
+            <li><a href="https://irusa.org/middle-east/palestine/" data-item="Islamic Relief USA">Islamic Relief USA</a></li>
+        </ul>
     </div>
 
     <!-- Footer -->
     <footer>
-        
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
     </footer>
 
+    <!-- Include JavaScript -->
     <script>
         // Function to filter donation items based on search input
         function filterDonations() {
@@ -56,15 +96,28 @@
             const donations = document.querySelectorAll('.donation-item');
             let foundResults = false;
 
-            // Loop through all donation items and hide/show based on search query
+            // Loop through all donation categories
             donations.forEach(function(donation) {
-                const donationName = donation.getAttribute('data-name').toLowerCase();
-                
-                if (donationName.includes(searchQuery)) {
-                    donation.style.display = 'block'; // Show the donation item
+                const categoryName = donation.getAttribute('data-name').toLowerCase();
+                const links = donation.querySelectorAll('a');
+                let matchFoundInCategory = false;
+
+                // Loop through each link (donation) in the category
+                links.forEach(function(link) {
+                    const itemName = link.getAttribute('data-item').toLowerCase();
+
+                    // Check if the search query matches category name or donation item name
+                    if (categoryName.includes(searchQuery) || itemName.includes(searchQuery)) {
+                        matchFoundInCategory = true;
+                    }
+                });
+
+                // Show or hide the category based on the match
+                if (matchFoundInCategory) {
+                    donation.style.display = 'block';
                     foundResults = true;
                 } else {
-                    donation.style.display = 'none'; // Hide the donation item
+                    donation.style.display = 'none';
                 }
             });
 
