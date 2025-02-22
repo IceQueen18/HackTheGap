@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Donations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="volunteer.html">Volunteer Opportunities</a>
+        <a href="search.html">Search for Donations</a>
+        <a href="form.html"> Contribute Donation Ideas</a>
+    </nav>
+
+    <h1>Search for Donations</h1>
+    
+    <!-- Search Bar -->
+    <input type="text" id="search-bar" placeholder="Search for donations..." onkeyup="filterDonations()">
+    
+    <!-- No results message -->
+    <p id="no-results" style="display: none;">No donations found matching your search.</p>
+
+    <!-- Donation Items -->
+    <div id="donations">
+        <div class="donation-item" data-name="Clothes for Homeless">
+            <h3>Clothes for Homeless</h3>
+            <p>Donate clothes to homeless shelters in need.</p>
+        </div>
+        <div class="donation-item" data-name="Food for Refugees">
+            <h3>Food for Refugees</h3>
+            <p>Help provide food for refugees in camps.</p>
+        </div>
+        <div class="donation-item" data-name="Books for Schools">
+            <h3>Books for Schools</h3>
+            <p>Donate books for underfunded schools.</p>
+        </div>
+        <div class="donation-item" data-name="Medical Supplies for Hospitals">
+            <h3>Medical Supplies for Hospitals</h3>
+            <p>Donate medical supplies to local hospitals.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        
+    </footer>
+
+    <script>
+        // Function to filter donation items based on search input
+        function filterDonations() {
+            const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+            const donations = document.querySelectorAll('.donation-item');
+            let foundResults = false;
+
+            // Loop through all donation items and hide/show based on search query
+            donations.forEach(function(donation) {
+                const donationName = donation.getAttribute('data-name').toLowerCase();
+                
+                if (donationName.includes(searchQuery)) {
+                    donation.style.display = 'block'; // Show the donation item
+                    foundResults = true;
+                } else {
+                    donation.style.display = 'none'; // Hide the donation item
+                }
+            });
+
+            // Display "No results found" if no matches
+            if (foundResults) {
+                document.getElementById('no-results').style.display = 'none';
+            } else {
+                document.getElementById('no-results').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
