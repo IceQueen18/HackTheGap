@@ -2,25 +2,47 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(wwd3.webp);
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
 }
+
 
 nav {
-    background-color: #333;
+    background-color: #fff5ec;
     overflow: hidden;
-}
 
+}
+.logo{
+    float: left;
+}
+nav::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    margin-top: 7%;
+}
+nav a[href="Signup.html"]::after {
+    content: "|";
+    color:#333; 
+    padding: 30%;
+    font-weight: bolder;
+    
+}
 nav a {
     float: left;
     display: block;
-    color: white;
+    color: #2a464f;
     text-align: center;
-    padding: 14px 20px;
+    padding: 50px 20px;
     text-decoration: none;
+    
 }
-
 nav a:hover {
-    background-color: #ddd;
-    color: black;
+    color: #a3f2ea;
 }
 
 /* Section Styles */
@@ -53,19 +75,23 @@ footer {
 
 /* Search Bar */
 #search-bar {
-    width: 100%;
-    padding: 10px;
+    width: 20%;
+    padding: 5px;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-left: 80%;
+    border-radius: 10px;
+
+
 }
 
 /* Donation Items */
 .donation-item {
-    background-color: white;
+    background-color: #fff5ec;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px;
     margin-bottom: 15px;
+    width: 300px;
 }
 
 .donation-item h3 {

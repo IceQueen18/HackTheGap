@@ -10,21 +10,28 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
+        <img class="logo" src="WWD.png" alt="" width="120" height="120"/>
+        
+        <a href="index.html">What do we do</a>
+        <a href="search.html">Get Involved</a>
         <a href="donation.html">Donation Opportunities</a>
-        <a href="search.html">Search for Donations</a>
+        <a href="Signup.html">SignUp</a>
+        <span class="vl"></span>
+        <a href="login.html">Login</a>
     </nav>
+    <!-- <hr style="border: 2px soild #333; margin: 0;"> -->
 
     <!-- Search Bar Section -->
      <h1>Donations</h1>
     <section>
-        <h1>Search for Donations</h1>
+        <!-- <h1>Search for Donations</h1> -->
         <input type="text" id="search-bar" placeholder="Search for donations..." onkeyup="filterDonations()">
         <p id="no-results" style="display: none;">No donations found matching your search.</p>
     </section>
 
     <!-- Donation Categories -->
     <div class="donation-item" data-name="Environment">
+        <div id="main-content">
         <h4>Environment</h4>
         <ul>
             <li><a href="https://act.oceana.org/page/141584/donate/1" data-item="Oceana USA">Oceana USA</a></li>
@@ -34,6 +41,7 @@
             <li><a href="https://www.asanacr.org/donaciones/" data-item="Asana">Asana</a></li>
             <li><a href="https://www.alturaswildlifesanctuary.org/support/" data-item="Alturas Wildlife Sanctuary">Alturas Wildlife Sanctuary</a></li>
         </ul>
+        </div>
     </div>
 
     <div class="donation-item" data-name="Health">
