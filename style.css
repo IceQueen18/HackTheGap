@@ -149,3 +149,197 @@ footer {
         font-size: 16px;
     }
 }
+#about-us {
+    background-color: #fff;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about-us h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#about-us h3 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+#about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#about-us ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#about-us ul li {
+    margin-bottom: 10px;
+}
+
+/* Services Section */
+#services {
+    padding: 50px 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* FAQ Section */
+#faq {
+    padding: 50px 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#faq h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #e1e1e1;
+}
+
+.faq-item h4 {
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.faq-item p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+footer a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #16a085;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #search-bar {
+        width: 80%;
+    }
+
+    .donation-item {
+        padding: 15px;
+    }
+
+    .donation-item h4 {
+        font-size: 20px;
+    }
+
+    .donation-item li {
+        font-size: 16px;
+    }
+}
+
+/* Founders Section */
+#founders {
+    background-color: #fff;
+    padding: 50px 15px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+#founders h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.founder-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.founder {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.founder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.founder img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #1abc9c;
+}
+
+.founder h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.founder p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.founder p:first-of-type {
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .founder-container {
+        grid-template-columns: 1fr;
+    }
+
+    .founder {
+        max-width: 300px;
+    }
+}
