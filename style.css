@@ -190,7 +190,7 @@ footer {
         font-size: 16px;
     }
 }
-#about-us {
+/* #about-us {
     background-color: #fff;
     padding: 50px 20px;
     margin: 20px auto;
@@ -283,7 +283,6 @@ footer {
     padding: 20px;
     font-size: 16px;
 }
-
 footer a {
     color: #1abc9c;
     text-decoration: none;
@@ -319,20 +318,20 @@ footer a:hover {
     margin: 20px auto;
     max-width: 1200px;
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+    justify-content: center; /* Ensure content is centered vertically */
+    height: 100%; /* Ensures the section takes full height */
 }
 
-#founders h2 {
-    font-size: 36px;
-    color: #2c3e50;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
+/* Founders Container */
 .founder-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid layout */
     gap: 20px;
-    justify-items: center;
+    width: 100%; /* Make sure the container takes full width */
+    justify-items: center; /* Centers items horizontally */
 }
 
 .founder {
@@ -344,6 +343,12 @@ footer a:hover {
     width: 100%;
     max-width: 250px;
     text-align: center;
+}
+.founder h2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .founder:hover {
@@ -384,4 +389,5 @@ footer a:hover {
     .founder {
         max-width: 300px;
     }
-}
+} */
+
